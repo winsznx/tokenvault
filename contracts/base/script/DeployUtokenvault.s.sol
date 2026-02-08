@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import "forge-std/Script.sol";
-import "../src/ChainRegistry.sol";
+import "../src/Utokenvault.sol";
 
 contract DeployScript is Script {
     function run() external {
@@ -10,9 +10,9 @@ contract DeployScript is Script {
         
         vm.startBroadcast(deployerPrivateKey);
         
-        ChainRegistry registry = new ChainRegistry();
+        Utokenvault registry = new Utokenvault();
         
-        console.log("ChainRegistry deployed to:", address(registry));
+        console.log("Utokenvault deployed to:", address(registry));
         
         vm.stopBroadcast();
     }
